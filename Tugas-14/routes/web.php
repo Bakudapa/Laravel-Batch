@@ -7,6 +7,7 @@ use App\Http\Controllers\FormController;
 Route::get('/', [DashboardController::class, 'index'])->name('home');
 Route::get('/register', [FormController::class, 'register'])->name('register');
 Route::post('/welcome', [FormController::class, 'welcome'])->name('welcome');
+Route::resource('genre', GenreController::class);
 
 Route::get('/master', function(){
     return view('layouts.master');
