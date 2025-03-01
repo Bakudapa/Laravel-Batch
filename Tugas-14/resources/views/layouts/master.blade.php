@@ -52,7 +52,13 @@
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up">
-       @yield('content')
+      @if(session('success'))
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ session('success') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      @endif  
+      @yield('content')
       </div>
 
     </section><!-- /Starter Section Section -->
